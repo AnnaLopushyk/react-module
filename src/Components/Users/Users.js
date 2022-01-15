@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import User from './User'
 
 export default function Users() {
     let [users, setUsers] = useState([]);
@@ -17,7 +18,10 @@ export default function Users() {
         <div className='usersStyle'>
            <ul>
                {
-                   users.map(users => <li key={users.id}> {users.name}></li>)
+                   users.map(
+                       users => <li key={users.id}>
+                          <User item={users}/>
+                   </li>)
                }
            </ul>
         </div>

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Comment from "./Comment";
 
 const Comments = () => {
     const [comments, setComments]=useState([]);
@@ -13,7 +14,7 @@ const Comments = () => {
     return (
         <div className='comment'>
             {
-                comments.map(comments => <li key={comments.id}> {comments.body}</li>)
+                comments.map(comments => <p key={comments.id}> <Comment item={comments}/></p>)
             }
         </div>
     );

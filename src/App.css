@@ -1,24 +1,21 @@
 #root {
-    justify-content: center;
-    align-items: center;
-    border: 2px solid teal;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid teal;
 }
 
 .userPost {
-    display: flex;
-    justify-content: space-between;
-    background: lightsteelblue;
+  display: flex;
+  justify-content: space-between;
+  background: lightsteelblue;
 }
 
 .usersStyle {
-    display: flex;
-    background: lightcyan;
-    width: 50%;
+  display: flex;
+  background: lightcyan;
+  width: 50%;
 }
 .comment {
-    background: lightgrey;
-    padding:10px;
-
+  background: lightgrey;
+  padding: 10px;
 }
-
-

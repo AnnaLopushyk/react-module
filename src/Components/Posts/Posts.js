@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Post from "./Post";
 
 const Posts = () => {
     const [posts,setPosts] = useState([]);
@@ -16,7 +17,7 @@ const Posts = () => {
         <div>
             <ul>
                 {
-                    posts.map(posts => <li key={posts.id}>{posts.title}</li>)
+                    posts.map(posts => <li key={posts.id}><Post item={posts}/></li>)
                 }
             </ul>
 
