@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
-import User from "../User/User";
-import {userService} from "../../services/user.service";
+import User from '../User/User';
+import {userService} from '../../services/user.service';
 
 const Users = ({getUser,getUserId}) => {
     const [users, setUsers] = useState([]);

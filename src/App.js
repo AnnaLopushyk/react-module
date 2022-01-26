@@ -1,10 +1,10 @@
 import './App.css';
 
-import Users from "./components/Users/Users";
-import {useState} from "react";
-import UserDetails from "./components/UserDetails/UserDetails";
-import Posts from "./components/Posts/Posts";
-import {postService} from "./services/post.service";
+import Users from './components/Users/Users';
+import {useState} from 'react';
+import UserDetails from './components/UserDetails/UserDetails';
+import Posts from './components/Posts/Posts';
+import {postService} from './services/post.service';
 
 function App() {
 
