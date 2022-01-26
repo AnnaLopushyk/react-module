@@ -1,7 +1,7 @@
 import axios from "axios";
-import {urls} from "../configs/urls";
+import {urls} from '../configs/urls';
 
-import {axiosService} from "./axios.service";
+import {axiosService} from './axios.service';
 
 export const userService = {
     getAll:()=>axiosService.get(urls.users).then(value => value.data)
