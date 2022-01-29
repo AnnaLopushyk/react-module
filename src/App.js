@@ -1,32 +1,22 @@
-import {Routes, Route, Link} from 'react-router-dom'
-
-
-import UsersPage from './pages/UsersPage/UsersPage';
-import PostsPage from './pages/PostsPage/PostsPage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import Layout from './components/Layout/Layout';
-import SingleUserPage from './pages/SingleUserPage/SingleUserPage';
-
+import {useState} from 'react';
+import Form from './components/Form/Form';
+import Cars from './components/Cars/Cars';
 
 function App() {
+    const [cars,setCars] = useState([]);
+
+    const getFormData = (data) => {
+        setCars([...cars, {id:new Date().getTime(), ...data}])
+
+    }
+    const getCarId = (id) => {
+setCars(cars.filter(car=>car.id!==id))
+    }
+
     return (
         <div>
-
-
-            <Routes>
-
-                <Route path={'/'} element = {<Layout/>}>
-                    <Route path={'/users'} element={<UsersPage/>}/>
-                         <Route path={'users/:id'} element={<SingleUserPage/>}/>
-                    {/*<Route/>*/}
-
-                    <Route path={'/posts'} element={<PostsPage/>}/>
-                    <Route path={'/*'} element={<NotFoundPage/>}/>
-
-                </Route>
-
-            </Routes>
-
+            <Form getFormData={getFormData} />
+            <Cars cars={cars} getCarId={getCarId}/>
         </div>
 
     );
