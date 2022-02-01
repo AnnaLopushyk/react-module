@@ -3,7 +3,7 @@ import {carService} from '../../services';
 
 
 export const getAllCars = createAsyncThunk(
-    'carSlice/getAllCars',
+    'cars/getAllCars',
     async (_, {rejectWithValue}) => {
         try {
             const data = await carService.getAll();
@@ -15,7 +15,7 @@ export const getAllCars = createAsyncThunk(
 )
 
 export const createCar = createAsyncThunk(
-    'carSlice/createCar',
+    'cars/createCar',
     async ({data:newCar, id}, {dispatch}) => {
         try {
             const data = await carService.create(newCar);
@@ -27,11 +27,11 @@ export const createCar = createAsyncThunk(
 )
 
 export const deleteCarThunk = createAsyncThunk(
-    'carSlice/deleteCarThunk',
+    'cars/deleteCarThunk',
     async ({id}, {dispatch})=>{
         try {
             await carService.deleteById(id)
-            dispatch(deleteCar(id))
+            dispatch(deleteCar({id}))
         }catch (e) {
             console.log(e);
         }
@@ -39,7 +39,7 @@ export const deleteCarThunk = createAsyncThunk(
 )
 
 const carSlice = createSlice({
-    name: 'carSlice',
+    name: 'cars',
     initialState: {
         cars: [],
         status: null,
